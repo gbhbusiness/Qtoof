@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- vim:fdl=1:
+-->
+<templates xml:space="preserve">
+    <t t-extend="PaymentScreenWidget">
+        <t t-jquery=".paymentmethods-container" t-operation="inner">
+            <t t-if='widget.pos.config.pos_credit_note'>
+                <div class="paymentmethods">
+                    <div t-attf-class='button paymentmethod js_credit_note #{ widget.pos.get_order().is_credit_note() ? "highlight" : ""}'>
+                        <i class='fa fa-credit-card ' /> Delivery Note
+                    </div>
+                </div>
+            </t>
+        </t>
+    </t>
+</templates>
